@@ -33,7 +33,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-laugh-wink fa-spin"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">PERPUS <sup>V3</sup></div>
             </a>
@@ -44,7 +44,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/">
-                    <i class="fas fa-solid fa-globe"></i>
+                    <i class="fas fa-solid fa-archway"></i>
                     <span>Beranda</span></a>
             </li>
 
@@ -97,8 +97,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manajemen Transaksi :</h6>
-                        <a class="collapse-item" href="/peminjaman">Peminjaman</a>
-                        <a class="collapse-item" href="/pengembalian">Pengembalian</a>
+                        <a class="collapse-item" href="/peminjaman"><i class="fas fa-solid fa-handshake"></i> Peminjaman</a>
+                        <a class="collapse-item" href="/pengembalian"><i class="fas fa-solid fa-hand-holding-box"></i> Pengembalian</a>
                     </div>
                 </div>
             </li>
