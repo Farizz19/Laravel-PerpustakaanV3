@@ -32,8 +32,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink fa-spin"></i>
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-solid fa-school"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">PERPUS <sup>V3</sup></div>
             </a>
@@ -58,6 +58,21 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataAnggota"
+                    aria-expanded="true" aria-controls="collapseDataAnggota">
+                    <i class="fas fa-solid fa-user-graduate"></i>
+                    <span>Data Anggota</span>
+                </a>
+                <div id="collapseDataAnggota" class="collapse" aria-labelledby="headingDataAnggota" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Manajemen Data Anggota :</h6>
+                        <a class="collapse-item" href="/dataanggota"><i class="fas fa-solid fa-users"></i> Data Anggota</a>
+                        <!-- <a class="collapse-item" href="/cetakkartu"><i class="fas fa-solid fa-address-card"></i> Cetak Kartu</a> -->
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnggota"
                     aria-expanded="true" aria-controls="collapseAnggota">
                     <i class="fas fa-solid fa-user-graduate"></i>
@@ -81,7 +96,7 @@
                 <div id="collapseBuku" class="collapse" aria-labelledby="headingBuku" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manajemen Buku :</h6>
-                        <a class="collapse-item" href="/databuku"><i class="fas fa-solid fa-box-open-full"></i> Data Buku</a>
+                        <a class="collapse-item" href="/databuku"><i class="fas fa-solid fa-passport"></i> Data Buku</a>
                     </div>
                 </div>
             </li>
@@ -98,7 +113,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manajemen Transaksi :</h6>
                         <a class="collapse-item" href="/peminjaman"><i class="fas fa-solid fa-handshake"></i> Peminjaman</a>
-                        <a class="collapse-item" href="/pengembalian"><i class="fas fa-solid fa-hand-holding-box"></i> Pengembalian</a>
+                        <a class="collapse-item" href="/pengembalian"><i class="fas fa-solid fa-handshake"></i> Pengembalian</a>
                     </div>
                 </div>
             </li>
@@ -152,7 +167,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Muhammad Fariz</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Pengguna</span>
                                 <i class="fas fa-solid fa-address-card"></i>
                             </a>
                             <!-- Dropdown - User Information -->

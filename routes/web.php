@@ -3,12 +3,15 @@
 use App\Http\Controllers\CetakKartu;
 use App\Http\Controllers\Daftar;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DataAnggota;
 use App\Http\Controllers\DataBuku;
 use App\Http\Controllers\Peminjaman;
 use App\Http\Controllers\Pengembalian;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Dashboard::class, 'index']);
+
+Route::get('/dataanggota', [DataAnggota::class, 'index']);
 
 Route::get('/cetakkartu', [CetakKartu::class, 'index']);
 Route::get('/daftar', [Daftar::class, 'index']);
