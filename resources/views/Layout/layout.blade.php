@@ -60,13 +60,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataAnggota"
                     aria-expanded="true" aria-controls="collapseDataAnggota">
-                    <i class="fas fa-solid fa-user-graduate"></i>
-                    <span>Data Anggota</span>
+                    <i class="fas fa-solid fa-users"></i>
+                    <span>Data Pengguna</span>
                 </a>
                 <div id="collapseDataAnggota" class="collapse" aria-labelledby="headingDataAnggota" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Manajemen Data Anggota :</h6>
-                        <a class="collapse-item" href="/dataanggota"><i class="fas fa-solid fa-users"></i> Data Anggota</a>
+                        <h6 class="collapse-header">Manajemen Data Pengguna :</h6>
+                        <a class="collapse-item" href="/datapengguna"><i class="fas fa-solid fa-address-card"></i> Data Pengguna</a>
                         <!-- <a class="collapse-item" href="/cetakkartu"><i class="fas fa-solid fa-address-card"></i> Cetak Kartu</a> -->
                     </div>
                 </div>
@@ -167,8 +167,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Pengguna</span>
-                                <i class="fas fa-solid fa-address-card"></i>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Muhammad Fariz</span>
+                                <!-- <i class="fas fa-solid fa-address-card"></i> -->
+                                <img class="img-profile rounded-circle" src="assets/img/Jokowi.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

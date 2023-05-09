@@ -1,22 +1,24 @@
 <?php
 
-use App\Http\Controllers\CetakKartu;
-use App\Http\Controllers\Daftar;
-use App\Http\Controllers\Dashboard;
-use App\Http\Controllers\DataAnggota;
-use App\Http\Controllers\DataBuku;
-use App\Http\Controllers\Peminjaman;
-use App\Http\Controllers\Pengembalian;
+use App\Http\Controllers\CetakKartuController;
+use App\Http\Controllers\DaftarController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataBukuController;
+use App\Http\Controllers\DataPenggunaController;
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\PengembalianController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [Dashboard::class, 'index']);
+Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/dataanggota', [DataAnggota::class, 'index']);
+Route::get('/datapengguna', [DataPenggunaController::class, 'index']);
+Route::get('/tambahpengguna', [DataPenggunaController::class, 'tambah']);
 
-Route::get('/cetakkartu', [CetakKartu::class, 'index']);
-Route::get('/daftar', [Daftar::class, 'index']);
 
-Route::get('/databuku', [DataBuku::class, 'index']);
+Route::get('/cetakkartu', [CetakKartuController::class, 'index']);
+Route::get('/daftar', [DaftarController::class, 'index']);
 
-Route::get('/peminjaman', [Peminjaman::class, 'index']);
-Route::get('/pengembalian', [Pengembalian::class, 'index']);
+Route::get('/databuku', [DataBukuController::class, 'index']);
+
+Route::get('/peminjaman', [PeminjamanController::class, 'index']);
+Route::get('/pengembalian', [PengembalianController::class, 'index']);

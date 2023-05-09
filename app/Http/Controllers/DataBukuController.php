@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DataBuku extends Controller
+class DataBukuController extends Controller
 {
 public function index()
     {
