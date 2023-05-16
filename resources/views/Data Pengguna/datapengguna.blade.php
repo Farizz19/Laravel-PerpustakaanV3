@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('content')
-
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -38,15 +37,24 @@
                                 </thead>
 
                                 <tbody>
+                                    @php
+                                    $no=1;
+                                    @endphp
+                                    
+                                    @foreach($user as $u)            
                                 <tr class="text-center">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$no}}</td>
+                                    <td>{{$u->username}}</td>
+                                    <td>{{$u->level}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-success">Ubah</a>
-                                        <a href="#" class="btn btn-danger">Hapus</a>
-                                    </td>
-                                </tr>
+                                        <a href="/ubahpengguna/{{$u->user_id}}" class="btn btn-success">Ubah</a>
+
+                                        <a href="/hapuspengguna/{{$u->user_id}}" class="btn btn-danger" data-confirm-delete="true">Hapus</a>
+                                    @php
+                                    $no++;
+                                    @endphp
+                                    
+                                    @endforeach
                                 </tbody>
 
                                 </table>
@@ -56,6 +64,4 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
-
 @endsection

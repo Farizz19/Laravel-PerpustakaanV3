@@ -262,6 +262,8 @@
     <script src="{{asset('assets/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('assets/js/demo/chart-pie-demo.js')}}"></script>
 
+    @include('sweetalert::alert')
+
 </body>
 
 </html>
