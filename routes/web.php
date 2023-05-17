@@ -5,6 +5,7 @@ use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataPenggunaController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ Route::post('/simpanpengguna', [DataPenggunaController::class, 'simpanpengguna']
 // TAMBAH PENGGUNA
 
 // HAPUS PENGGUNA
-Route::delete('/hapuspengguna/{user_id}', [DataPenggunaController::class, 'hapuspengguna'])->name('hapuspengguna');;
+Route::delete('/hapuspengguna/{user_id}', [DataPenggunaController::class, 'hapuspengguna']);
 // HAPUS PENGGUNA
 
 // UBAH PENGGUNA
@@ -42,3 +43,7 @@ Route::get('/databuku', [DataBukuController::class, 'index']);
 Route::get('/peminjaman', [PeminjamanController::class, 'index']);
 Route::get('/pengembalian', [PengembalianController::class, 'index']);
 // PEMINJAMAN DAN PENGEMBALIAN
+
+// LOGIN
+Route::get('/login', [LoginController::class, 'index']);
+// LOGIN
