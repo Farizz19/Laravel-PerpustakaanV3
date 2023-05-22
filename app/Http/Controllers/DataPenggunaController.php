@@ -11,14 +11,14 @@ class DataPenggunaController extends Controller
     public function index()
     {
         $user = DataPenggunaModel::get();
+        $users = DataPenggunaModel::count();
 
         $judul = 'Hapus Pengguna!';
         $keterangan = "Apakah Kamu Yakin Ingin Menghapus Pengguna?";
         confirmDelete($judul, $keterangan);
 
         return view('Data Pengguna/datapengguna',
-        compact('user')
-        );
+        compact('user', 'users'));
     }
 
     public function tambah()
@@ -94,6 +94,13 @@ class DataPenggunaController extends Controller
         Alert::success('Sukses','Data Berhasil Diubah!');
 
         return redirect('/datapengguna');
-
     }
+
+    
+    // public function logout(Request $request){
+    //     $request->session()->forget(['login', 'username', 'password']);
+    //     $request->session()->flush();
+    //     Alert::success('Selamat Tinggal!', 'Berhasil Logout');
+    //     return redirect('/');
+    // }
 }

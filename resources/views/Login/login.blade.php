@@ -20,9 +20,23 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <style>
+        .waktu {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: whitesmoke;
+        }
+
+        /* #footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10px;
+            color: whitesmoke;
+        } */
+    </style>
+
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background: linear-gradient(black, grey, grey, white);">
 
     <div class="container">
 
@@ -32,10 +46,16 @@
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
+                    <!-- <div class="bg-gradient-dark text-center p-1">
+                        <marquee style="font-size: 20px;">Selamat Datang Di Perpustakaan V3</marquee>
+                    </div> -->
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div id="bg" class="col-lg-6 d-none d-lg-block bg-login-image">
+                                <!-- <img src="assets/img/RPL.jpg" height="" style="background-size: cover;"> -->
+                                <!-- <img class="bg-success p-2 text-white bg-opacity-75" src="assets/img/RPL2.jpg" width="" height="" style="background-size: cover;"> -->
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -43,15 +63,22 @@
                                             <br> <span class="text-primary">Di Perpustakaan V3</span>
                                         </h1>
                                     </div>
-                                    <form class="user" action="" method="post">
+                                    <form class="user" action="/proseslogin" method="post">
+                                        @csrf
+                                        <!-- @if($errors->any())
+                                        <h4 class="text-danger text-center">{{$errors->first()}}</h4>
+                                        @endif -->
                                         <div class="form-group">
-                                            <input type="username" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Masukkan Nama Pengguna">
+                                            <input type="username" name="username" class="form-control form-control-user" placeholder="Masukkan Nama Pengguna" autofocus>
+                                             @error('username')
+                                            <label for="username" class="text-danger">{{$message}}</label>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Masukkan Kata Sandi">
+                                            <input type="password" name="password" class="form-control form-control-user" placeholder="Masukkan Kata Sandi">
+                                             @error('password')
+                                            <label for="password" class="text-danger">{{$message}}</label>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -59,33 +86,33 @@
                                                 <label class="custom-control-label" for="customCheck">Ingat Saya</label>
                                             </div>
                                         </div>
-                                        <!-- <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a> -->
+                                        
+                                        <div class="form-group">
+                                            <input class="btn btn-success form-control" type="submit" value="Masuk">
+                                        </div>
 
-                                        <input class="btn btn-success form-control" type="submit" value="Masuk">
-
-                                        <hr>
+                                        <!-- <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Masuk dengan Google
                                         </a>
                                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Masuk dengan Facebook
-                                        </a>
+                                        </a> -->
+                                        
                                     </form>
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Lupa Kata Sandi?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Buat Akun!</a>
+                                        <a class="small" href="/register">Buat Akun!</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        <!-- <div id="footer" class="bg-gradient-dark p-1 text-center">Copyright &copy; Fariz</div> -->
                 </div>
-
             </div>
 
         </div>

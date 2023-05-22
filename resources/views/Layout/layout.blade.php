@@ -1,3 +1,10 @@
+@if(session('login') == null){
+    <script>
+    window.location = '/';
+    </script>
+    }
+@endif
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +54,50 @@
                     <i class="fas fa-solid fa-archway"></i>
                     <span>Beranda</span></a>
             </li>
+
+            <div class="text-center text-light">
+
+                        <!-- <marquee class="">Selamat Datang Di Perpustakaan V3</marquee> -->
+                        
+                        <?php
+                        date_default_timezone_set("Asia/Jakarta");
+                        ?>
+
+                        <script type="text/javascript">
+                        function date_time(id)
+                        {
+                        date = new Date;
+                        year = date.getFullYear();
+                        month = date.getMonth();
+                        months = new Array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+                        d = date.getDate();
+                        day = date.getDay();
+                        days = new Array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu');
+                        h = date.getHours();
+                        if(h<10)
+                        {
+                        h = "0"+h;
+                        }
+                        m = date.getMinutes();
+                        if(m<10)
+                        {
+                        m = "0"+m;
+                        }
+                        s = date.getSeconds();
+                        if(s<10)
+                        {
+                        s = "0"+s;
+                        }
+                        result = ''+days[day]+', '+d+' '+months[month]+' '+year+' '+h+':'+m+':'+s;
+                        document.getElementById(id).innerHTML = result;
+                        setTimeout('date_time("'+id+'");','1000');
+                        return true;
+                        }
+                        </script>
+
+                        <span class="waktu" id="date_time"></span>
+                        <script type="text/javascript">window.onload = date_time('date_time');</script>
+            </div>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -167,7 +218,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Muhammad Fariz</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session()->get('username') }}</span>
                                 <!-- <i class="fas fa-solid fa-address-card"></i> -->
                                 <img class="img-profile rounded-circle" src="assets/img/Jokowi.jpg">
                             </a>
@@ -187,7 +238,7 @@
                                     Riwayat Aktivitas
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/login">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#konfirmasikeluar">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Keluar
                                 </a>
@@ -226,20 +277,20 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="konfirmasikeluar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Klik "Keluar" dibawah ini untuk keluar.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+                    <a class="btn btn-primary" href="/logout">Keluar</a>
                 </div>
             </div>
         </div>
